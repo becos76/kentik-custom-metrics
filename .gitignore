@@ -1,0 +1,5 @@
+.env
+.venv
+kagent-data/*
+!kagent-data/.gitkeep
+

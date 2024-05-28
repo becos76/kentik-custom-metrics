@@ -1,0 +1,20 @@
+version: 1
+metadata:
+  name: junos-fw-grpc
+  kind: reports
+reports:
+  /junos/firewall/filter/memory:
+    script: !external
+      type: starlark
+      file: junos-fw-grpc-memory.star
+    interval: 30s
+  /junos/firewall/filter/counters:
+    script: !external
+      type: starlark
+      file: junos-fw-grpc-counters.star
+    interval: 30s
+  /junos/firewall/filter/policers:
+    script: !external
+      type: starlark
+      file: junos-fw-grpc-policers.star
+    interval: 30s

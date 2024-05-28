@@ -1,0 +1,37 @@
+---
+version: 1
+metadata:
+  name: junos-fw-snmp
+  kind: reports
+reports:
+  /junos/firewall/snmp:
+    combine:
+      table0: !snmp
+        table: 1.3.6.1.4.1.2636.3.5.2
+        index: $index0
+    fields:
+      packets: !snmp
+        table: 1.3.6.1.4.1.2636.3.5.2
+        value: 1.3.6.1.4.1.2636.3.5.2.1.4
+        metric: true
+      bytes: !snmp
+        table: 1.3.6.1.4.1.2636.3.5.2
+        value: 1.3.6.1.4.1.2636.3.5.2.1.5
+        metric: true
+      filter_name: !snmp
+        table: 1.3.6.1.4.1.2636.3.5.2
+        value: 1.3.6.1.4.1.2636.3.5.2.1.6
+        metric: false
+      counter_name: !snmp
+        table: 1.3.6.1.4.1.2636.3.5.2
+        value: 1.3.6.1.4.1.2636.3.5.2.1.7
+        metric: false
+      counter_type: !snmp
+        table: 1.3.6.1.4.1.2636.3.5.2
+        value: 1.3.6.1.4.1.2636.3.5.2.1.8
+        metric: false
+        tweak: !enum
+          1: other
+          2: counter
+          3: policer
+    interval: 5m

@@ -1,0 +1,18 @@
+---
+services:
+  kagent:
+    hostname: kagent03
+    image: kentik/kagent:latest
+    restart: unless-stopped
+    pull_policy: always
+    cap_add:
+      - NET_RAW
+    environment:
+      - K_COMPANY_ID=<CompanyID from Portal>
+      - K_API_ROOT=grpc.api.kentik.eu:443
+      - K_LOG_LEVEL=debug
+    volumes:
+      - /opt/dev/kentik/kagent-data:/opt/kentik
+      - /opt/dev/kentik/override-data:/opt/kentik/components/ranger/local/
+
+

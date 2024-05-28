@@ -1,0 +1,15 @@
+---
+version: 1
+metadata:
+  name: junos-fw-snmp
+  kind: profile
+profile:
+  match:
+    sysobjectid:
+      - 1.3.6.1.4.1.2636.1.1.1.2.108
+  reports:
+    - junos-fw-snmp
+  include:
+    - device_name_ip
+  # sources:
+  #   - junos-fw-snmp

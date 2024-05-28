@@ -1,0 +1,11 @@
+version: 1
+metadata:
+  name: xrv-fspec-grpc
+  kind: sources
+sources:
+  xrv-fspec-grpc: !gnmi
+    path: Cisco-IOS-XR-flowspec-oper:flow-spec/vrfs/vrf/afs/af/flows/flow/
+    mode: SAMPLE
+    extra:
+      sample_interval: 30s
+

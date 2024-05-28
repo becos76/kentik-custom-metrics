@@ -1,0 +1,10 @@
+version: 1
+metadata:
+  name: xrv-fspec-grpc
+  kind: reports
+reports:
+  /xrv/flowspec/statistics:
+    script: !external
+      type: starlark
+      file: xrv-fspec-grpc.star
+    interval: 30s

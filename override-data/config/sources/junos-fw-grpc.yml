@@ -1,0 +1,11 @@
+version: 1
+metadata:
+  name: junos-fw-grpc
+  kind: sources
+sources:
+  junos-fw-grpc: !gnmi
+    path: /junos/system/linecard/firewall/
+    mode: SAMPLE
+    extra:
+      sample_interval: 30s
+
